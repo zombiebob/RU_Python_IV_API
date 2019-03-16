@@ -11,8 +11,8 @@ class InvalidClient(Exception):
 class ActiveClient(object):
 
     CLIENT_TIMEOUT = 5  # seconds
-    LINK_TITLES = ['first_link', 'next_url', 'url_no_2',
-                   'almost_there', 'penultimate']
+    LINK_TITLES = ['Darth Tyranus', 'Darth Bane', 'Darth Sidious',
+                   'Darth Maul', 'Darth Vader']
 
     def __init__(self, my_id):
         self.my_id = my_id

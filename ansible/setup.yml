@@ -13,7 +13,7 @@
       install_directory: /var/app/py4class
       runtime_user: www-data
       gunicorn_sock: /run/py4class/socket
-      gunicorn_port: 9000
+      gunicorn_port: 8000
       listen_port: 80
 
     tasks:
@@ -36,8 +36,9 @@
         file: path=/run/py4class state=directory owner={{ runtime_user }}
 
       - name: clone the repo
-        git: repo=git://github.com/jeremyprice/RU_Python_IV_API.git
+        git: repo=git://github.com/zombiebob/RU_Python_IV_API.git
              dest={{ install_directory }}
+             
         become: yes
         become_user: "{{ runtime_user }}"
         notify:
@@ -84,6 +85,13 @@
           - py4class
           - redis-server
 
+      - name: create log directory
+        file:
+          path: /var/app/py4class/logs/
+          state: directory
+          owner: www-data
+          mode: 0775
+ 
     handlers:
       - name: reload systemd
         command: systemctl daemon-reload
