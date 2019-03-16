@@ -65,9 +65,8 @@ def step(step_id):
                            _external=True)
         outgoing = {title: next_url, 'token': token}
     else:  # no path left, they are at the end!
-        outgoing = {'answer': 42, 'greeting': 'So long, and thanks for all the fish!'}
+        outgoing = {'answer': 'rax.io{42}ctf', 'greeting': 'So long, and thanks for all the fish!'}
     return jsonify(**outgoing)
-
 
 if __name__ == '__main__':
     app.run()
