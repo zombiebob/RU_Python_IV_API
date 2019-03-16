@@ -20,7 +20,7 @@ class ActiveClient(object):
         self.path_index = [generate_id()]
         self.creation_time = datetime.datetime.now()
         self.my_titles = ActiveClient.LINK_TITLES[:]
-        random.shuffle(self.my_titles)
+        #random.shuffle(self.my_titles)
 
     @property
     def id(self):
