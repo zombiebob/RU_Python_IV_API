@@ -4,9 +4,9 @@
 
     vars:
       packages:
-        - python-pip
+        - python3-pip
         - nginx
-        - python-dev
+        - python3-dev
         - redis-server
         - redis-tools
         - git-all
